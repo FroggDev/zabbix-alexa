@@ -22,13 +22,4 @@ The file contains 2 templates:
 * Template Alexa echo dot
 * Template Alexa echo input
 
-# Template items
-* Alexa echo dot
-![Zabbix ALEXA DOT Template](https://tool.frogg.fr/upload/github/zabbix-alexa/items-dot.png)
-* Alexa echo input
-![Zabbix ALEXA DOT Template](https://tool.frogg.fr/upload/github/zabbix-alexa/items-input.png)
-# Template triggers
-* Alexa echo dot
-![Zabbix ALEXA INPUT Template triggers](https://tool.frogg.fr/upload/github/zabbix-alexa/triggers-dot.png)
-* Alexa echo input
-![Zabbix ALEXA INPUT Template triggers](https://tool.frogg.fr/upload/github/zabbix-alexa/triggers-input.png)
+
