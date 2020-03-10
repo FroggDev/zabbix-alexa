@@ -9,7 +9,7 @@ It can check:
 * If Alexa echo input port is opened  
 
 # Requirement
-No spefcific requierement
+No specific requierement
 
 It use **Simple check** zabbix function
 
