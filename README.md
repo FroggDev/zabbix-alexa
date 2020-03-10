@@ -3,7 +3,7 @@
 Tested on Zabbix 4.4
 
 # Introduction
-Template for zabbix to check if Alexa echo dot or input responding has they can't be pinged using external script.
+Template for zabbix to check if Alexa echo dot or input is responding, as they can't be pinged, using external script.
 It can check:
 * If Alexa echo dot ports are opened 
 * If Alexa echo input port is opened  
