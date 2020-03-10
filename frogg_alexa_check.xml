@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-03-10T09:58:45Z</date>
+    <groups>
+        <group>
+            <name>Alexa</name>
+        </group>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Alexa echo</template>
+            <name>Template Alexa echo</name>
+            <description>Simple check on port 8888 &amp; 1080</description>
+            <groups>
+                <group>
+                    <name>Alexa</name>
+                </group>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>status</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Check port 1080</name>
+                    <type>SIMPLE</type>
+                    <key>net.tcp.service[tcp,,1080]</key>
+                    <history>1w</history>
+                    <applications>
+                        <application>
+                            <name>status</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <triggers>
+                        <trigger>
+                            <expression>{max(#2)}=0</expression>
+                            <name>Port 1080 down on {HOSTNAME}</name>
+                            <priority>WARNING</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Check port 8888</name>
+                    <type>SIMPLE</type>
+                    <key>net.tcp.service[tcp,,8888]</key>
+                    <history>1w</history>
+                    <applications>
+                        <application>
+                            <name>status</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <triggers>
+                        <trigger>
+                            <expression>{max(#2)}=0</expression>
+                            <name>Port 8888 down on {HOSTNAME}</name>
+                            <priority>WARNING</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+        <template>
+            <template>Template Alexa input</template>
+            <name>Template Alexa input</name>
+            <description>Simple check on port 55442 (Alexa)</description>
+            <groups>
+                <group>
+                    <name>Alexa</name>
+                </group>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>status</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Check port 55442</name>
+                    <type>SIMPLE</type>
+                    <key>net.tcp.service[tcp,,55442]</key>
+                    <history>1w</history>
+                    <applications>
+                        <application>
+                            <name>status</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <triggers>
+                        <trigger>
+                            <expression>{max(#2)}=0</expression>
+                            <name>Port 55442 is down on {HOSTNAME}</name>
+                            <priority>WARNING</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+    <value_maps>
+        <value_map>
+            <name>Service state</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Down</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Up</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
