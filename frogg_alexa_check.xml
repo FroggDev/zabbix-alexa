@@ -12,8 +12,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template Alexa echo</template>
-            <name>Template Alexa echo</name>
+            <template>Template Alexa echo dot</template>
+            <name>Template Alexa echo dot</name>
             <description>Simple check on port 8888 &amp; 1080</description>
             <groups>
                 <group>
@@ -76,9 +76,9 @@
             </items>
         </template>
         <template>
-            <template>Template Alexa input</template>
-            <name>Template Alexa input</name>
-            <description>Simple check on port 55442 (Alexa)</description>
+            <template>Template Alexa echo input</template>
+            <name>Template Alexa echo input</name>
+            <description>Simple check on port 55442</description>
             <groups>
                 <group>
                     <name>Alexa</name>
