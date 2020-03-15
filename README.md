@@ -30,7 +30,6 @@ The file contains 2 templates:
 # Template triggers
 * Alexa echo dot
 ![Zabbix ALEXA INPUT Template triggers](https://tool.frogg.fr/upload/github/zabbix-alexa/triggers-echo-dot.png)
-![Zabbix ALEXA INPUT Template triggers](https://tool.frogg.fr/upload/github/zabbix-alexa/triggers-echo-dot.png)
+
 * Alexa echo input
-![Zabbix ALEXA INPUT Template triggers](https://tool.frogg.fr/upload/github/zabbix-alexa/triggers-echo-input.png)
 ![Zabbix ALEXA INPUT Template triggers](https://tool.frogg.fr/upload/github/zabbix-alexa/triggers-echo-input.png)
