@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-03-10T09:58:45Z</date>
+    <date>2020-03-15T17:07:57Z</date>
     <groups>
         <group>
             <name>Alexa</name>
@@ -42,14 +42,6 @@
                     <valuemap>
                         <name>Service state</name>
                     </valuemap>
-                    <triggers>
-                        <trigger>
-                            <expression>{max(#2)}=0</expression>
-                            <name>Port 1080 down on {HOSTNAME}</name>
-                            <priority>WARNING</priority>
-                            <manual_close>YES</manual_close>
-                        </trigger>
-                    </triggers>
                 </item>
                 <item>
                     <name>Check port 8888</name>
@@ -64,14 +56,6 @@
                     <valuemap>
                         <name>Service state</name>
                     </valuemap>
-                    <triggers>
-                        <trigger>
-                            <expression>{max(#2)}=0</expression>
-                            <name>Port 8888 down on {HOSTNAME}</name>
-                            <priority>WARNING</priority>
-                            <manual_close>YES</manual_close>
-                        </trigger>
-                    </triggers>
                 </item>
             </items>
         </template>
@@ -109,7 +93,7 @@
                     <triggers>
                         <trigger>
                             <expression>{max(#2)}=0</expression>
-                            <name>Port 55442 is down on {HOSTNAME}</name>
+                            <name>{HOSTNAME} is unavailable</name>
                             <priority>WARNING</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
@@ -118,6 +102,14 @@
             </items>
         </template>
     </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template Alexa echo dot:net.tcp.service[tcp,,1080].max(#2)}=0 and {Template Alexa echo dot:net.tcp.service[tcp,,8888].max(#2)}=0</expression>
+            <name>{HOSTNAME} is unavailable</name>
+            <priority>WARNING</priority>
+            <manual_close>YES</manual_close>
+        </trigger>
+    </triggers>
     <value_maps>
         <value_map>
             <name>Service state</name>
